@@ -13,7 +13,7 @@ namespace baithiC_
     public GiaoVien(string ho, string ten, string maSo, string boMon): base (ho, ten, maSo)
     {
       _id = "GV";
-      _boMon = BoMon;
+      _boMon = boMon;
     }
   }
 }

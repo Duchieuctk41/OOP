@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\baithiC#\\baithiC#.csproj",
+      "projectUniqueName": "E:\\OOP\\baithiC#\\baithiC#.csproj",
       "projectName": "baithiC#",
-      "projectPath": "E:\\baithiC#\\baithiC#.csproj",
+      "projectPath": "E:\\OOP\\baithiC#\\baithiC#.csproj",
       "packagesPath": "C:\\Users\\duchi\\.nuget\\packages\\",
-      "outputPath": "E:\\baithiC#\\obj\\",
+      "outputPath": "E:\\OOP\\baithiC#\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\duchi\\AppData\\Roaming\\NuGet\\NuGet.Config"

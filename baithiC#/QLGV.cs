@@ -68,12 +68,28 @@ namespace baithiC_
         Console.WriteLine("Khong tim thay giao vien co ho ten: {0} {1}", ho, ten);
     }
 
-    public GiaoVien TimKiem_MaSo(string maSo)
-    {
 
+    public void TimKiem_Ten(string ten)
+    {
+      int dem = 0;
       for (int i = 0; i < tongSo; i++)
       {
-        if (dsGiaoVien[i].Ten == maSo)
+        if (dsGiaoVien[i].Ten == ten)
+        {
+          Xuat_1_GV(dsGiaoVien[i]);
+          dem++;
+        }
+      }
+      if (dem == 0)
+        Console.WriteLine("Khong tim thay giao vien ten {0}", ten);
+
+    }
+    public GiaoVien TimKiem_MaSo(string maSo)
+    {
+      
+      for (int i = 0; i < tongSo; i++)
+      {
+        if (dsGiaoVien[i].MaSo == maSo)
           return dsGiaoVien[i];
       }
       return null;
@@ -103,18 +119,49 @@ namespace baithiC_
 
     public void Write(string filename)
     {
+      FileStream fs = new FileStream(filename, FileMode.OpenOrCreate);
+      StreamWriter writer = new StreamWriter(fs);
 
+      writer.WriteLine(MaHoa(tongSo.ToString()));
+
+      for (int i = 0; i < tongSo; i++)
+      {
+        var gv = dsGiaoVien[i];
+        writer.WriteLine(MaHoa(gv.MaSo));
+        writer.WriteLine(MaHoa(gv.HoDem));
+        writer.WriteLine(MaHoa(gv.Ten));
+        writer.WriteLine(MaHoa(gv.BoMon));
+      }
+
+      writer.Close();
+      fs.Close();
     }
 
     public string MaHoa(string data)
     {
       string chuoiMaHoa = "";
+
+      for (int i = 0; i < data.Length; i++)
+      {
+        int ascii = (int)data[i];
+        ascii = ascii + 5;
+        chuoiMaHoa += (char)ascii;
+      }
+
       return chuoiMaHoa;
     }
 
     public string GiaiMa(string data)
     {
       string chuoiGiaiMa = "";
+
+      for (int i = 0; i < data.Length; i++)
+      {
+        int ascii = (int)data[i];
+        ascii = ascii - 5;
+        chuoiGiaiMa += (char)ascii;
+      }
+
       return chuoiGiaiMa;
     }
   }
